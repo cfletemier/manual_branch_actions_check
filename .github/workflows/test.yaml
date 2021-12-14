@@ -4,7 +4,7 @@ on:
 
 jobs:
   output-branch-name:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Extract branch name
