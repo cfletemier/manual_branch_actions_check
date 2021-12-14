@@ -1,0 +1,16 @@
+name: output the name of the branch to test
+on:
+  workflow_dispatch:
+
+jobs:
+  output-branch-name:
+    runs-on: unbuntu-latest
+
+    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: output
+        shell: bash
+        run: echo ${BRANCH_NAME}
